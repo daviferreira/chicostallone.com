@@ -40,7 +40,7 @@
         $ar_tempo = sec2time($tempo_restante);
         $tempo_restante = "{$ar_tempo['days']}:{$ar_tempo['hours']}:{$ar_tempo['minutes']}:{$ar_tempo['seconds']}";
       }else{
-        $tempo_restante = "00:00:00:00";
+        $tempo_restante = false;
       }
     ?>
     <script type="text/javascript">
@@ -61,14 +61,17 @@
         color: #000;
       }
       .desc { margin: 7px 3px; }
-      .desc div {
+      .desc span {
         float: left;
-        font-family: Arial;
-        width: 70px;
-        margin-right: 65px;
-        font-size: 13px;
+        width: 100px;
+        margin-right: 35px;
+        font-size: 12px;
         font-weight: bold;
-        color: #000;
+        color: #666;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        text-shadow: 1px 1px 2px #ccc;
       }
       #container {
         width: 560px;
@@ -87,6 +90,7 @@
   </head>
 <body>
   <div id="container">
+    <?php if($tempo_restante): ?>
     <section id="countdown">
       <header>
         <h1>Chico Stallone vem aí!</h2>
@@ -94,12 +98,15 @@
       </header>
       <div id="counter"></div>
       <div class="desc">
-        <div>Dias</div>
-        <div>Horas</div>
-        <div>Minutos</div>
-        <div>Segundos</div>
+        <span id="dias">Dias</span>
+        <span id="horas">Horas</span>
+        <span id="minutos">Minutos</span>
+        <span id="segundos">Segundos</span>
       </div>
     </section>
+    <?php else: ?>
+    <h1>Chico chegou!</h1>
+    <?php endif; ?>
   </div>
 </body>
 </html>
