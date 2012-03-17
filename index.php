@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Chico Stallone</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-    <script src="js/jquery.countdown.js"></script>
+    <script src="js/jquery.countdown.js?<?php echo date('U'); ?>"></script>
     <?php
       $tempo_restante = strtotime("2012-05-15 11:00:00") - date('U');
       function sec2time($time)
