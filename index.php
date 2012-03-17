@@ -11,8 +11,8 @@
       {
           if (is_numeric($time)) {
               $value = array(
-                  "years" => 0, "days" => 0, "hours" => 0,
-                  "minutes" => 0, "seconds" => 0,
+                  "years" => "00", "days" => "00", "hours" => "00",
+                  "minutes" => "00", "seconds" => "00",
                   );
               if ($time >= 31556926) {
                   $value["years"] = str_pad(floor($time / 31556926), 2, "0", STR_PAD_LEFT);
