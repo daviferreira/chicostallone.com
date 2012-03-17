@@ -6,7 +6,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script src="js/jquery.countdown.js?<?php echo date('U'); ?>"></script>
     <?php
-      $tempo_restante = strtotime("2012-05-15 11:00:00") - date('U');
+      date_default_timezone_set('America/Sao_Paulo');
+      $data_atual     = date('Y-m-d H:i:s');
+      $data_prevista  = "2012-05-15 11:00:00";
+      $tempo_restante = strtotime($data_prevista) - strtotime($data_atual);
       function sec2time($time)
       {
           if (is_numeric($time)) {
@@ -43,6 +46,13 @@
         $tempo_restante = false;
       }
     ?>
+<!--
+<?php 
+echo $data_atual."\n";
+echo $data_prevista."\n";
+print_r($ar_tempo); 
+?>
+-->
     <script type="text/javascript">
       $(function(){
         $('#counter').countdown({
