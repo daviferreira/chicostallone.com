@@ -46,8 +46,8 @@ jQuery.fn.countdown = function(userOptions)
         switch (options.format[i]) {
           case 'h':
             digits[c].__max = (c % 2 == 0) ? 2: 9;
-            if (c % 2 == 0)
-              digits[c].__condmax = 4;
+            if (c % 2 != 0)
+              digits[c].__condmax = 3;
             break;
           case 'd': 
             digits[c].__max = 9;
