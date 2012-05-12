@@ -8,7 +8,7 @@
     <?php
       date_default_timezone_set('America/Sao_Paulo');
       $data_atual     = date('Y-m-d H:i:s');
-      $data_prevista  = "2012-05-15 11:00:00";
+      $data_prevista  = "2012-05-15 16:00:00";
       $tempo_restante = strtotime($data_prevista) - strtotime($data_atual);
       function sec2time($time)
       {
