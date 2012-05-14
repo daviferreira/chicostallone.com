@@ -4,63 +4,6 @@
     <meta charset="UTF-8">
     <title>Chico Stallone</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-    <script src="js/jquery.countdown.js?<?php echo date('U'); ?>"></script>
-    <?php
-      date_default_timezone_set('America/Sao_Paulo');
-      $data_atual     = date('Y-m-d H:i:s');
-      $data_prevista  = "2012-05-15 16:00:00";
-      $tempo_restante = strtotime($data_prevista) - strtotime($data_atual);
-      function sec2time($time)
-      {
-          if (is_numeric($time)) {
-              $value = array(
-                  "years" => "00", "days" => "00", "hours" => "00",
-                  "minutes" => "00", "seconds" => "00",
-                  );
-              if ($time >= 31556926) {
-                  $value["years"] = str_pad(floor($time / 31556926), 2, "0", STR_PAD_LEFT);
-                  $time = ($time % 31556926);
-              }
-              if ($time >= 86400) {
-                  $value["days"] = str_pad(floor($time / 86400), 2, "0", STR_PAD_LEFT);
-                  $time = ($time % 86400);
-              }
-              if ($time >= 3600) {
-                  $value["hours"] = str_pad(floor($time / 3600), 2, "0", STR_PAD_LEFT);
-                  $time = ($time % 3600);
-              }
-              if ($time >= 60) {
-                  $value["minutes"] = str_pad(floor($time / 60), 2, "0", STR_PAD_LEFT);
-                  $time = ($time % 60);
-              }
-              $value["seconds"] = str_pad(floor($time), 2, "0", STR_PAD_LEFT);
-              return (array) $value;
-          } else {
-              return (bool) false;
-          }
-      }
-      if($tempo_restante > 0){
-        $ar_tempo = sec2time($tempo_restante);
-        $tempo_restante = "{$ar_tempo['days']}:{$ar_tempo['hours']}:{$ar_tempo['minutes']}:{$ar_tempo['seconds']}";
-      }else{
-        $tempo_restante = false;
-      }
-    ?>
-<!--
-<?php 
-echo $data_atual."\n";
-echo $data_prevista."\n";
-print_r($ar_tempo); 
-?>
--->
-    <script type="text/javascript">
-      $(function(){
-        $('#counter').countdown({
-          image: 'img/digits.png',
-          startTime: '<?php echo $tempo_restante; ?>'
-        });
-      });
-    </script>
     <style>
       *, html { font-family: "Helvetica Neue", "Arial", sans-serif; }
       body { background: url(img/bg.png) repeat; color: #666; text-shadow: -1px -1px 0 #fff; }
@@ -100,23 +43,12 @@ print_r($ar_tempo);
   </head>
 <body>
   <div id="container">
-    <?php if($tempo_restante): ?>
     <section id="countdown">
       <header>
-        <h1>Chico Stallone vem aí!</h2>
-        <h2>Faltam aproximadamente...</h2>
+        <h1>Chico chegou!</h2>
       </header>
-      <div id="counter"></div>
-      <div class="desc">
-        <span id="dias">Dias</span>
-        <span id="horas">Horas</span>
-        <span id="minutos">Minutos</span>
-        <span id="segundos">Segundos</span>
-      </div>
+      <img src="img/chico.jpg" width="612" height="612" alt="Chico!" />
     </section>
-    <?php else: ?>
-    <h1>Chico chegou!</h1>
-    <?php endif; ?>
   </div>
 </body>
 </html>
