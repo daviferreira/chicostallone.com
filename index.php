@@ -3,52 +3,46 @@
   <head>
     <meta charset="UTF-8">
     <title>Chico Stallone</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-    <style>
-      *, html { font-family: "Helvetica Neue", "Arial", sans-serif; }
-      body { background: url(img/bg.png) repeat; color: #666; text-shadow: -1px -1px 0 #fff; }
-      br { clear: both; }
-      .cntSeparator {
-        font-size: 54px;
-        margin: 10px 7px;
-        color: #000;
-      }
-      .desc { margin: 7px 3px; }
-      .desc span {
-        float: left;
-        width: 100px;
-        margin-right: 35px;
-        font-size: 12px;
-        font-weight: bold;
-        color: #666;
-        text-transform: uppercase;
-        text-align: center;
-        display: block;
-        text-shadow: 1px 1px 2px #ccc;
-      }
-      #container {
-        width: 560px;
-        margin: 0 auto;
-        margin-top: 60px;
-      }
-      h1 {
-        font-size: 60px;
-        letter-spacing: -4px;
-      }
-      h2 {
-        font-size: 20px;
-        color: #999;
-      }
-    </style>
+    <link type="text/css" rel="stylesheet" href="galleria/themes/classic/galleria.classic.css">
+    <link rel="stylesheet" href="css/chico.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="galleria/galleria-1.2.7.min.js"></script>
+    <script type="text/javascript" src="galleria/themes/classic/galleria.classic.min.js"></script>
   </head>
 <body>
   <div id="container">
-    <section id="countdown">
-      <header>
-        <h1>Chico chegou!</h2>
-      </header>
-      <img src="img/chico.jpg" width="612" height="612" alt="Chico!" />
+    <section id="bio">
+       <p><strong>Francisco Stallone Ferreira</strong> veio ao mundo no dia 12 de maio de 2012, às 11:14, pesando 3.250kg e medindo 49,5cm.</p>
     </section>
+    <div id="galleria">
+        <?php
+        $photos = glob("fotos/*.jpg");
+        usort($photos, function($a, $b) {
+            return (int)preg_replace("/[^0-9]/", "", $a) > (int) preg_replace("/[^0-9]/", "", $b);
+        });
+        foreach($photos as $p){
+          echo '<img src="'.$p.'">';
+        }
+        ?>
+    </div>
   </div>
+  <script>
+      $(function(){
+        $('#galleria').galleria({
+          width: 1000,
+          height: 600,
+          transition: 'fadeslide',
+          autoplay: true,
+          clicknext: true,
+          thumbCrop: true
+        });
+        Galleria.ready(function() {
+            this.attachKeyboard({
+              right: this.next,
+              left: this.prev
+            });
+        });
+      });
+   </script>
 </body>
 </html>

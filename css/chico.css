@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/proximanova-regular-webfont.eot');
+    src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ProximaNovaBlack';
+    src: url('../fonts/proximanova-black-webfont.eot');
+    src: url('../fonts/proximanova-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-black-webfont.woff') format('woff'),
+         url('../fonts/proximanova-black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+*, html { font-family: "ProximaNovaRegular", "Helvetica Neue", "Arial", sans-serif; }
+body { background: #fff; color: #666;  }
+br { clear: both; }
+.cntSeparator {
+  font-size: 54px;
+  margin: 10px 7px;
+  color: #000;
+}
+.desc { margin: 7px 3px; }
+.desc span {
+  float: left;
+  width: 100px;
+  margin-right: 35px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-shadow: 1px 1px 2px #ccc;
+}
+#container {
+  width: 1024px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#bio {
+  font-size: 32px;
+  line-height: 38px;
+}
+#bio strong {
+  font-family: ProximaNovaBlack;
+  font-weight: normal;
+  font-size: 38px;
+  text-shadow: -1px -1px 0 #ccc;
+}
+h1 {
+  font-size: 60px;
+  letter-spacing: -4px;
+}
+h2 {
+  font-size: 20px;
+  color: #999;
+}
