@@ -49,12 +49,13 @@ br { clear: both; }
 #bio {
   font-size: 32px;
   line-height: 38px;
+  letter-spacing: -2px;
 }
 #bio strong {
   font-family: ProximaNovaBlack;
   font-weight: normal;
   font-size: 38px;
-  text-shadow: -1px -1px 0 #ccc;
+  color: #666;
 }
 h1 {
   font-size: 60px;
