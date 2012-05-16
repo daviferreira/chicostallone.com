@@ -15,7 +15,7 @@
        <p><strong>Francisco Stallone Ferreira</strong> veio ao mundo no dia 12 de maio de 2012, às 11:14, pesando 3.250kg e medindo 49,5cm.</p>
     </section>
     <div id="video">
-      <iframe src="http://player.vimeo.com/video/42301209?title=0&amp;byline=0&amp;portrait=0" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <iframe src="http://player.vimeo.com/video/42301209?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     </div>
     <div id="galleria">
         <?php
