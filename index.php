@@ -10,23 +10,28 @@
     <script type="text/javascript" src="galleria/themes/classic/galleria.classic.min.js"></script>
   </head>
 <body>
-  <div id="container">
+  <div class="container">
     <section id="bio">
        <p><strong>Francisco Stallone Ferreira</strong> veio ao mundo no dia 12 de maio de 2012, às 11:14, pesando 3.250kg e medindo 49,5cm.</p>
     </section>
     <div id="video">
       <iframe src="http://player.vimeo.com/video/42301209?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     </div>
-    <div id="galleria">
-        <?php
-        $photos = glob("fotos/*.jpg");
-        usort($photos, function($a, $b) {
-            return (int)preg_replace("/[^0-9]/", "", $a) > (int) preg_replace("/[^0-9]/", "", $b);
-        });
-        foreach($photos as $p){
-          echo '<img src="'.$p.'">';
-        }
-        ?>
+  </div>
+  <div id="container-galleria">
+    <div class="container">
+      <h2>Galeria de fotos</h2>
+      <div id="galleria">
+          <?php
+          $photos = glob("fotos/*.jpg");
+          usort($photos, function($a, $b) {
+              return (int)preg_replace("/[^0-9]/", "", $a) > (int) preg_replace("/[^0-9]/", "", $b);
+          });
+          foreach($photos as $p){
+            echo '<img src="'.$p.'">';
+          }
+          ?>
+      </div>
     </div>
   </div>
   <script>

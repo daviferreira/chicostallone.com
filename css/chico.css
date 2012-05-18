@@ -41,30 +41,38 @@ br { clear: both; }
   display: block;
   text-shadow: 1px 1px 2px #ccc;
 }
-#container {
+.container {
   width: 1024px;
   margin: 0 auto;
   margin-top: 20px;
+}
+#container-galleria {
+  border-top: 1px dashed #666;
+  margin: 40px 0;
+  background-color: #fcfcfc;
 }
 #bio {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -2px;
 }
-#bio strong {
+#bio strong, h2 {
   font-family: ProximaNovaBlack;
   font-weight: normal;
   font-size: 38px;
   color: #666;
-}
-h1 {
-  font-size: 60px;
-  letter-spacing: -4px;
+  letter-spacing: -2px;
 }
 h2 {
-  font-size: 20px;
-  color: #999;
+  color: #333;
 }
+.galleria-container {
+  background-color: #666;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
 #video {
   margin: 40px 0;
   text-align: center;
